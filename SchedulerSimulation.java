@@ -278,7 +278,22 @@ public class SchedulerSimulation {
                 }
             }
         }
-        System.out.println(Colors.BOLD + Colors.GREEN + "\nTotal Context Switches: " + contextSwitchCount + Colors.RESET);
+      System.out.println(Colors.BOLD + Colors.GREEN + "\nTotal Context Switches: " + contextSwitchCount + Colors.RESET);
+        // Feature 3: Summary Table for Waiting Time & Turnaround Time
+System.out.println("\n==========================================================================");
+System.out.println("                         PROCESS EXECUTION SUMMARY                        ");
+System.out.println("==========================================================================");
+System.out.printf("%-10s %-10s %-10s %-18s %-15s\n", "Process", "Burst(ms)", "Priority", "Turnaround Time", "Waiting Time");
+System.out.println("--------------------------------------------------------------------------");
+
+for (Thread thread : processMap.keySet()) {
+    Process p = processMap.get(thread);
+    long turnaround = p.getCompletionTime() - p.getArrivalTime();
+    long waiting = turnaround - p.getBurstTime();
+    System.out.printf("%-10s %-10d %-10d %-18d %-15d\n", 
+                      p.getName(), p.getBurstTime(), p.getPriority(), turnaround, waiting);
+}
+System.out.println("==========================================================================");
         // End of the scheduler simulation
         System.out.println(Colors.BOLD + Colors.BRIGHT_GREEN + 
                           "╔════════════════════════════════════════════════════════════════════════════════╗" + 
