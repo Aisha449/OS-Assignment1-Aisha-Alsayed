@@ -147,13 +147,22 @@ public int getPriority(){
 }
 
 public class SchedulerSimulation {
+    private static int contextSwitchCount = 0;
     public static void main(String[] args) {
         // ⚠️ IMPORTANT: Put your student ID here to seed the random number generator
         // This makes your output unique to you - DO NOT forget to change this!
         int studentID = 445052832;  // ← CHANGE THIS TO YOUR ACTUAL STUDENT ID
+         Random random = new Random(studentID);
+        int timeQuantum = 2000 + random.nextInt(4) * 1000;
+        int numProcesses = 10 + random.nextInt(11);
+        Queue<Thread> processQueue = new LinkedList<>();
+        Map<Thread, Process> processMap = new HashMap<>();
+        for (int i = 1; i <= numProcesses; i++) {
+            int burstTime = timeQuantum/2 + random.nextInt(2 * timeQuantum + 1);
         int priority = 1+ random.nextInt(10);
         Process process = new Process("P" + i, burstTime, timeQuantum, priority);
-        Random random = new Random(studentID);
+            addProcessToQueue(process, processQueue, processMap);
+       
         
         // Define the time quantum in milliseconds (the maximum time a process gets in one round)
         // Choose a random number between 2000 and 5000 ms with a step of 1000 ms
@@ -241,6 +250,7 @@ public class SchedulerSimulation {
             System.out.println(Colors.BOLD + Colors.MAGENTA + "└" + "─".repeat(79) + Colors.RESET + "\n");
             
             // Start the thread, which will run the process for one time quantum
+            contextSwitchCount++;
             currentThread.start();
             
             try {
@@ -268,7 +278,7 @@ public class SchedulerSimulation {
                 }
             }
         }
-        
+        System.out.println(Colors.BOLD + Colors.GREEN + "\nTotal Context Switches: " + contextSwitchCount + Colors.RESET);
         // End of the scheduler simulation
         System.out.println(Colors.BOLD + Colors.BRIGHT_GREEN + 
                           "╔════════════════════════════════════════════════════════════════════════════════╗" + 
