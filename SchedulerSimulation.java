@@ -167,16 +167,15 @@ public class SchedulerSimulation {
     private static int contextSwitchCount = 0;
 
     public static void main(String[] args) {
-        // ⚠️ IMPORTANT: Put your student ID here to seed the random number generator
-        int studentID = 445052832;  // ← Student ID
+        int studentID = 445052832;  // Student ID
         
         Random random = new Random(studentID);
         
         // Define the time quantum in milliseconds
-        int timeQuantum = 2000 + random.nextInt(4) * 1000; // Random: 2000, 3000, 4000, or 5000
+        int timeQuantum = 2000 + random.nextInt(4) * 1000;
         
         // Generate random number of processes between 10 and 20
-        int numProcesses = 10 + random.nextInt(11); // Random number between 10 and 20
+        int numProcesses = 10 + random.nextInt(11);
         
         // Queue to manage processes in FIFO order
         Queue<Thread> processQueue = new LinkedList<>();
