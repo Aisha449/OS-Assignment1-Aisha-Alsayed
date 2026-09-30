@@ -143,72 +143,75 @@ Had to install JDK first because `javac` wasn't recognized
 **Solution**:
 Downloaded JDK 17 and set the PATH variable
 **Time spent**: 20 minutes
-  20د ة
 ---
 
 ### Entry 2 - [September 27, 2026, 6:30 PM]
 **What I did**:
-
+Implemented process priority and added it to the ready queue display.
 **Details**:
-
+Each process is assigned a random priority from 1 to 10. The priority is displayed when the process is added to the ready queue.
 **Challenges**:
-
+I needed to add the priority feature without affecting the existing Round Robin scheduling logic.
 **Solution**:
-
+I added a priority variable to the Process class, generated a priority between 1 and 10, and displayed it when adding each process to the ready queue.
 **Time spent**:
-
+30 minutes
 ---
 
-### Entry 3 - [Date and Time]
+### Entry 3 - [September 27, 2026, 7:00 PM]
 **What I did**:
-
+Implemented a static context switch counter.
 **Details**:
-
+he scheduler now counts how many times processes are given CPU time during the simulation.
 **Challenges**:
-
+The counter needed to work correctly while processes were repeatedly returned to the ready queue.
 **Solution**:
-
+I added a static contextSwitchCount variable and incremented it whenever the scheduler selects a process for execution.
 **Time spent**:
-
+25 minutes
 ---
 
-### Entry 4 - [Date and Time]
+### Entry 4 - [[September 27, 2026, 7:28 PM]
 **What I did**:
-
+Added tracking for process waiting time and turnaround time
 **Details**:
-
+I used System.currentTimeMillis() to record the arrival and completion times of each process.
 **Challenges**:
-
+I needed to calculate the timing values correctly based on the actual execution timestamps.
 **Solution**:
+I added arrivalTime and completionTime variables to the Process class and calculated:
 
+Turnaround Time = Completion Time - Arrival Time
+
+Waiting Time = Turnaround Time - Burst Time
 **Time spent**:
-
+45 minutes
 ---
 
-### Entry 5 - [Date and Time]
+### Entry 5 - [[September 27, 2026, 8:00 PM]
 **What I did**:
-
+Updated SchedulerSimulation.java to integrate the new scheduling features.
 **Details**:
-
+I added a summary table showing each process, burst time, priority, turnaround time, and waiting time
 **Challenges**:
-
+I needed to display all the collected process information clearly after the simulation completed.
 **Solution**:
-
+I added a final summary table that retrieves the information from the Process objects and calculates the required timing values.
 **Time spent**:
-
+30 minutes
 ---
 
-### Entry 6 - [Optional - Date and Time]
+### Entry 6 - [September 27, 2026, 8:30 PM]
 **What I did**:
-
+Updated the MY_WORK.md documentation.
 **Details**:
-
+I documented the work completed during the scheduler implementation, including the added priority, context switch counter, and timing calculations.
 **Challenges**:
-
+Organizing the completed work clearly in the required documentation format.
 **Solution**:
-
+I updated the work log with the implemented features and the steps completed during the project.
 **Time spent**:
-
+20 minutes
 ---
 
 ## Development Log Summary
