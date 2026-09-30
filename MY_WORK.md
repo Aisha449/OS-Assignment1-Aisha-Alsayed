@@ -129,20 +129,24 @@
 
 ## Your Development Log
 
-### Entry 1 - [Date and Time]
+### Entry 1 - [September 22, 2026, 2:30 PM]
 **What I did**:
-
+ Forked the repository and set up my student ID
 **Details**:
-
+Created GitHub account with university email
+- Forked the starter repository and renamed it
+- Changed student ID on line 150 to my actual ID (445052832)
+- Compiled and ran the program successfully
+- Committed and pushed: `Set my student ID: 445052832`
 **Challenges**:
-
+Had to install JDK first because `javac` wasn't recognized
 **Solution**:
-
-**Time spent**:
-
+Downloaded JDK 17 and set the PATH variable
+**Time spent**: 20 minutes
+  20د ة
 ---
 
-### Entry 2 - [Date and Time]
+### Entry 2 - [September 27, 2026, 6:30 PM]
 **What I did**:
 
 **Details**:
