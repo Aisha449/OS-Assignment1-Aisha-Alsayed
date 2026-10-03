@@ -242,9 +242,8 @@ I updated the work log with the implemented features and the steps completed dur
 
 > 💡 **TIP:** Talk about thread creation (`Runnable`, `Thread.start()`), waiting with `Thread.join()`, simulating work with `Thread.sleep()`, and what surprised you.
 
-**Your Answer:** *(5-7 sentences)*
-
-[Write your answer here.]
+**Your Answer:**  *(5-7 sentences)*
+[I learned that multithreading allows different tasks to be handled using separate threads. In this assignment, the Process class implements Runnable, and each process is executed by creating a Thread for it. The scheduler uses Thread.start() to begin the process execution. I also learned that Thread.sleep() can be used to simulate the time that a process spends running. The Thread.join() method makes the main scheduler wait until the current thread finishes its quantum. What surprised me was that the Process class in the code is not an actual operating system process, but an object that is executed by a Java thread.]
 
 ## Question 2: What was the most challenging part of this assignment?
 
@@ -252,7 +251,7 @@ I updated the work log with the implemented features and the steps completed dur
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[The most challenging part for me was understanding how the process is returned to the ready queue when it does not finish during its time quantum. I had to understand the relationship between the run() method, the remaining time, and the scheduler loop. The remainingTime value is reduced after every quantum, so the process may need to run several times before it finishes. I also had to make sure that the new features did not change the original Round-Robin scheduling behavior. Understanding the context switch counter was another part that required attention because it has to increase whenever the scheduler selects a process. After following the code step by step, I understood how the queue controls the order of execution.]
 
 ## Question 3: How did you overcome the challenges you faced?
 
@@ -260,7 +259,7 @@ I updated the work log with the implemented features and the steps completed dur
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[I overcame the challenges by reading the code carefully and following the execution flow from the beginning of the program to the end. I focused on important methods such as run(), runToCompletion(), and addProcessToQueue(). I also checked where Thread.start(), Thread.join(), and Thread.sleep() are used because they are important for understanding the threading behavior. After adding each feature, I checked the program output to make sure that the changes worked correctly. For example, I checked that the priority was displayed, the context switch counter increased, and the final table showed the timing information. Breaking the assignment into smaller features made the code easier for me to understand and debug.]
 
 ## Question 4: How can you apply multithreading concepts in real-world applications?
 
@@ -268,7 +267,7 @@ I updated the work log with the implemented features and the steps completed dur
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[Multithreading can be used in many real-world applications where several tasks need to run without making the whole application wait for one task. For example, a web browser can use different threads to handle user actions, loading pages, and other background tasks. Another example is a mobile application, where one thread can handle the user interface while other threads perform background operations. Operating systems also use scheduling techniques to share CPU time between multiple running programs and tasks. The Round-Robin idea is useful when several tasks need fair access to the CPU. Each task receives a time quantum and then another task gets a chance to run, which improves fairness and responsiveness.]
 
 ### Optional: What would you like to learn more about?
 
