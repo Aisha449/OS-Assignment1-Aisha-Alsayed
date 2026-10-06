@@ -299,7 +299,7 @@ I updated the work log with the implemented features and the steps completed dur
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+[A process is an independent program with its own memory space, while a thread is a smaller unit of execution that runs inside a process. Threads can share memory within the same process, while separate processes have separate memory spaces. Creating threads usually has less overhead than creating separate processes. In my assignment, the Process class represents a simulated process, and new Thread(process) in addProcessToQueue() creates a Java thread to execute it. We used threads because they allow the assignment to simulate scheduling and time sharing without creating separate operating system processes.]
 
 ## Question 2: Ready Queue Behavior
 
@@ -311,15 +311,16 @@ I updated the work log with the implemented features and the steps completed dur
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+[In Round-Robin scheduling, if a process does not finish within its time quantum, it gives up the CPU and is added back to the ready queue. In my output, P4 has a burst time of 8787 ms and the time quantum is 4000 ms, so it needed three executions to finish. P4 was re-queued two times, first with 4787 ms remaining and then with 787 ms remaining. Re-queueing allows other processes to use the CPU instead of allowing P4 to run continuously until completion. This makes the scheduling fairer because processes take turns using the CPU]
 
 Example from my output:
 ```
+▶ P4 executing quantum [4000ms] ⏸ P4 completed quantum 4000ms Remaining time: 4787ms ↻ P4 yields CPU for context switch ➕ P4 added to ready queue ▶ P4 executing quantum [4000ms] ⏸ P4 completed quantum 4000ms Remaining time: 787ms ↻ P4 yields CPU for context switch ➕ P4 added to ready queue ▶ P4 executing quantum [787ms] ⏸ P4 completed quantum 787ms Remaining time: 0ms ✓ P4 finished execution!
 [Paste a relevant snippet from your program output here showing a process being re-queued]
 ```
 
 **Explanation of example:**
-[Explain what is happening in the output snippet you pasted.]
+[P4 first uses its full 4000 ms time quantum but still has 4787 ms remaining, so it is added back to the ready queue. After its second 4000 ms quantum, it has 787 ms remaining and is re-queued again. During its third turn, it uses the remaining 787 ms and finishes..]
 
 ## Question 3: Thread Lifecycle
 
@@ -329,15 +330,15 @@ Example from my output:
 
 **Your Answer:** *(3-5 sentences overall; one short explanation per state)*
 
-1. **New**: [When is P1 in the New state?]
+1. **New**: [P1 is in the New state after its thread is created using new Thread(process) in addProcessToQueue()]
 
-2. **Runnable**: [When does P1 become Runnable?]
+2. **Runnable**: [P1 becomes Runnable when the scheduler calls currentThread.start(), which allows the thread to be scheduled for execution.]
 
-3. **Running**: [When is P1 Running?]
+3. **Running**: [P1 is Running when its run() method is executing and simulating its time quantum]
 
-4. **Waiting**: [When and why would a thread be Waiting?]
+4. **Waiting**: [During Thread.sleep() inside run(), P1's thread temporarily enters a timed waiting state, while currentThread.join() makes the main scheduler thread wait for P1 to finish]
 
-5. **Terminated**: [When is P1 Terminated?]
+5. **Terminated**: [P1's thread becomes Terminated when its run() method finishes, after which the scheduler can create another thread for P1 if it still has remaining time.]
 
 ## Question 4: Real-World Applications
 
@@ -347,32 +348,32 @@ Example from my output:
 
 **Your Answer:** *(3-5 sentences per example)*
 
-### Example 1 (operating-system level): [Name of scenario]
+### Example 1 (operating-system level): [CPU Scheduling]
 
 **Description**:
-[Describe the real-world scenario.]
+[An operating system can use Round-Robin scheduling to share CPU time among multiple running processes. Each process is given a fixed time quantum, and when the quantum ends, the CPU performs a context switch to another process.]
 
 **Why Round-Robin works well here**:
-[Fairness, responsiveness, predictability?]
+[Round-Robin provides fairness because every process gets a turn to use the CPU. It also improves responsiveness because one process cannot keep the CPU for too long. In my simulation, the running program represents the process, the time quantum determines how long it can run, and the context switch occurs when the process gives up the CPU and another process is scheduled.]
 
-### Example 2: [Name of application/scenario]
+### Example 2: [Web Server Handling Multiple Requests]
 
 **Description**:
-[Describe the real-world scenario or application.]
+[A web server may need to handle many client requests at the same time, where each request requires CPU processing. Round-Robin scheduling can give each task a fixed time quantum before switching to another task]
 
 **Why Round-Robin works well here**:
-[Fairness, responsiveness, predictability?]
+[This provides fairness because one request cannot continuously use the CPU while other requests wait. It also improves responsiveness because different requests receive CPU time regularly. Similar to my simulation, each request can be viewed as a process, the time quantum limits its execution time, and a context switch moves execution to another request.]
 
 ## Summary
 
 **Key concepts I understood through these questions:**
-1.
-2.
-3.
+1.The difference between processes and threads, and why threads are useful for scheduling.
+2.How Round-Robin scheduling uses a time quantum, ready queue, and context switches.
+3.The different thread states: New, Runnable, Running, Waiting, and Terminated.
 
 **Concepts I need to study more:**
-1.
-2.
+1.Thread states and the effect of start(), sleep(), and join()
+2.Context switching and how it affects CPU scheduling performance.
 
 ---
 
