@@ -382,36 +382,36 @@ Example from my output:
 > ⚠️ **WARNING:** Go through every line. Late submission costs **-1 mark per day**, and the deadline is **October 10, 2026**.
 
 **Repository**
-- [ ] Repository is **PUBLIC** (Settings → Danger Zone → Visibility)
-- [ ] Repository is renamed to `OS-Assignment1-YourFirstName-YourLastName`
-- [ ] GitHub account uses the university email (`@std.psau.edu.sa`)
+- [✅ ] Repository is **PUBLIC** (Settings → Danger Zone → Visibility)
+- [✅ ] Repository is renamed to `OS-Assignment1-YourFirstName-YourLastName`
+- [✅ ] GitHub account uses the university email (`@std.psau.edu.sa`)
 
 **Code**
-- [ ] Student ID is set in `SchedulerSimulation.java` (line 150)
-- [ ] Code compiles and runs with no errors
-- [ ] Feature 1 (priority), Feature 2 (context switches) and Feature 3 (waiting time table) all work
-- [ ] Each feature has clear comments
+- [✅ ] Student ID is set in `SchedulerSimulation.java` (line 150)
+- [✅ ] Code compiles and runs with no errors
+- [✅ ] Feature 1 (priority), Feature 2 (context switches) and Feature 3 (waiting time table) all work
+- [✅ ] Each feature has clear comments
 
 **Commits**
-- [ ] **At least 3 meaningful commits, ideally 6 or more**
-- [ ] **One commit per feature**
-- [ ] Commits are spread over **different dates** (not all in the last hour)
-- [ ] Everything is **pushed** to GitHub
+- [ ✅] **At least 3 meaningful commits, ideally 6 or more**
+- [✅ ] **One commit per feature**
+- [✅ ] Commits are spread over **different dates** (not all in the last hour)
+- [✅ ] Everything is **pushed** to GitHub
 
 **This file (`MY_WORK.md`)**
-- [ ] Full name and student ID filled in at the top
-- [ ] Development log has **5+ entries** on different dates
-- [ ] Reflection: 4 questions, 5-7 sentences each
-- [ ] Technical answers: 4 questions, 3-5 sentences each, with examples from **your** output
-- [ ] No `[...]` placeholders left
-- [ ] No section headers deleted
+- [✅ ] Full name and student ID filled in at the top
+- [✅ ] Development log has **5+ entries** on different dates
+- [✅ ] Reflection: 4 questions, 5-7 sentences each
+- [✅ ] Technical answers: 4 questions, 3-5 sentences each, with examples from **your** output
+- [✅ ] No `[...]` placeholders left
+- [✅ ] No section headers deleted
 
 **Video**
-- [ ] 2-3 minutes long, named `StudentID_Assignment1_Demo.mp4`
-- [ ] Shows your name, ID, repository, 3 features, IDE execution, one threading concept, and commit history
-- [ ] Link is **public** (tested in an incognito window) and pasted in the **Video Link** section above
+- [✅ ] 2-3 minutes long, named `StudentID_Assignment1_Demo.mp4`
+- [✅ ] Shows your name, ID, repository, 3 features, IDE execution, one threading concept, and commit history
+- [ ✅] Link is **public** (tested in an incognito window) and pasted in the **Video Link** section above
 
 **Blackboard**
-- [ ] Submit **only** the link to your public GitHub repository
+- [✅] Submit **only** the link to your public GitHub repository
 
 > 🎯 **Good luck!** Start early, commit regularly, and make sure you can explain every line you submit.
